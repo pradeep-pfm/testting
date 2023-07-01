@@ -31,7 +31,7 @@ public class CallMulti implements Callable
             };
             ExecutorService service = Executors.newFixedThreadPool(6);
             for (PrintJob job : jobs) {
-             Future r=service.wait(job);
+            // Future r=service.wait();
             }
             service.shutdown();
         }
