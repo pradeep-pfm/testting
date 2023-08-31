@@ -17,26 +17,27 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User saveUser(User user) {
+
         return userRepository.save(user);
     }
 
     @Override
 
-    public List<User> allUser() {
+    public Optional<List<User>> allUser() {
         List<User> allUser = userRepository.findAll();
         //System.out.println("All user are "+allUser.toString());
-      List<User> maleUser50=  allUser.stream().filter(user -> user.getGender().equals("Female") && user.getAge()<50)
-                .collect(Collectors.toList());
-        System.out.println("list are "+maleUser50);
+        Optional<List<User>> maleUser50 = Optional.of(allUser.stream().filter(user -> user.getGender().equals("Female") && user.getAge() < 50)
+                .collect(Collectors.toList()));
+        System.out.println("list are " + maleUser50);
         this.getAllUsersByGender("Male");
         return maleUser50;
     }
 
-    public List<User> getAllUsersByGender(String genderType) {
-        List<User> maleUser50=  userRepository.findAll().stream().filter(user -> genderType.equals(user.getGender()))
-                .collect(Collectors.toList());
+    public Optional<List<User>> getAllUsersByGender(String genderType) {
+        Optional<List<User>> maleUser50 = Optional.ofNullable(userRepository.findAll().stream().filter(user -> genderType.equals(user.getGender()))
+                .collect(Collectors.toList()));
 
-        System.out.println("getAllUsersByGender are "+maleUser50);
+        System.out.println("getAllUsersByGender are " + maleUser50);
         return maleUser50;
     }
 
@@ -45,7 +46,6 @@ public class UserServiceImpl implements UserService {
         Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
             return user.get();
-        } else
-            throw new RuntimeException("User is not available for "+id);
+        } else throw new RuntimeException("User is not available for " + id);
     }
 }

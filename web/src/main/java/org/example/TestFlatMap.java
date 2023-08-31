@@ -39,7 +39,7 @@ public class TestFlatMap {
         al.add(new Employee(103, "Saurabh Kumar", "Mumbai"));
 
         List<String> newList = al.stream()
-                //.filter(x -> x.getCity().equals("Mumbai"))
+                .filter(x -> x.getCity().equals("Mumbai"))
                 .flatMap(e -> Stream.of(e.getCity()))
                 .collect(Collectors.toList());
 
