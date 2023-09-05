@@ -37,9 +37,9 @@ public class Test8 {
                 .collect(Collectors.toList());
         System.out.println(departmentList);
 
-//        Set<String> newList=al.stream()
-//                .map(Employee::getName).collect(Collectors.toSet());
-//        System.out.println(newList);
+           Set<String> newList=al.stream()
+          .map(Employee::getName).collect(Collectors.toSet());
+           System.out.println(newList);
 
         List<String> fltmap=al.stream()
                 .filter(y->y.getDepartment().equals("IT"))

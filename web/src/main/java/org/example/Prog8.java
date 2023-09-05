@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 public class Prog8 {
     public static void main(String[] args) {
         //count number of char occurence in string
-        String input = "microservices";
-//      Map<String, Long> map=Arrays.stream(input.split(""))
-//                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
-//        System.out.println(map);
-//    }
+   /*     String input = "microservices";
+     Map<String, Long> map=Arrays.stream(input.split(""))
+               .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+       System.out.println(map);
+   }*/
         /// Find duplicate element in Array
 
 //   List<String> duplicate= Arrays.stream(input.split(""))
@@ -37,6 +37,14 @@ public class Prog8 {
                 .sorted(Comparator.reverseOrder())
                 .skip(1)
                 .findFirst().get();
-        System.out.println(second);
+
+       System.out.println("second highest "+second);
+        int[] numbers2={3,5,9,11,6,10,21,2};
+        Integer sec1= Arrays.stream(numbers2).boxed()
+                .sorted()
+                .skip(1)
+                .findFirst().get();
+        System.out.println(sec1);
+
     }
 }

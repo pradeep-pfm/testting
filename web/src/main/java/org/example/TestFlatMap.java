@@ -40,10 +40,18 @@ public class TestFlatMap {
 
         List<String> newList = al.stream()
                 .filter(x -> x.getCity().equals("Mumbai"))
+                .map(z->z.getCity())
+                //.flatMap(e -> Stream.of(e.getCity()))
+                .collect(Collectors.toList());
+
+        System.out.println("map data "+newList);
+        List<String> flmap = al.stream()
+                .filter(x -> x.getCity().equals("Mumbai"))
+                //.map(z->z.getCity())
                 .flatMap(e -> Stream.of(e.getCity()))
                 .collect(Collectors.toList());
 
-        System.out.println(newList);
+        System.out.println("flat map data "+flmap);
     }
 }
 
