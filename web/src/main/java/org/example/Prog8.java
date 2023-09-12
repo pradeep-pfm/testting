@@ -24,7 +24,7 @@ public class Prog8 {
 //        System.out.println(duplicate);
         //}
         ///// Find first non-repetitive element in Array
-        String input = "microservices for best pratices z ";
+        String input = "microservices for best practice z ";
      String unique=   Arrays.stream(input.split(""))
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
                 .entrySet()
