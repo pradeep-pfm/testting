@@ -23,14 +23,15 @@ public class Prog8 {
 //          .collect(Collectors.toList());
 //        System.out.println(duplicate);
         //}
-        ///// Find first non-repeatative element in Array
-//     String unique=   Arrays.stream(input.split(""))
-//                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
-//                .entrySet()
-//                .stream()
-//                .filter(x->x.getValue()==1)
-//                .findFirst().get().getKey();
-//        System.out.println(unique);
+        ///// Find first non-repetitive element in Array
+        String input = "microservices for best pratices z ";
+     String unique=   Arrays.stream(input.split(""))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(x->x.getValue()==1)
+                .findFirst().get().getKey();
+        System.out.println("Unique element is "+unique);
 //    }
   int[] numbers={3,5,9,11,6,10,21,2};
   Integer second=Arrays.stream(numbers).boxed()
@@ -38,8 +39,7 @@ public class Prog8 {
                 .skip(1)
                 .findFirst().get();
 
-       System.out.println("second highest "+second);
-        System.out.println("new list are :"+second);
+         System.out.println("new list are :"+second);
         int[] numbers2={3,5,9,11,6,10,21,2};
         Integer sec1= Arrays.stream(numbers2).boxed()
                 .sorted()
