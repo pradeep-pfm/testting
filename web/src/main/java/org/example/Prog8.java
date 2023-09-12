@@ -39,6 +39,7 @@ public class Prog8 {
                 .findFirst().get();
 
        System.out.println("second highest "+second);
+        System.out.println("new list are :"+second);
         int[] numbers2={3,5,9,11,6,10,21,2};
         Integer sec1= Arrays.stream(numbers2).boxed()
                 .sorted()
