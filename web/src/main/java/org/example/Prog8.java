@@ -31,7 +31,7 @@ public class Prog8 {
                 .stream()
                 .filter(x->x.getValue()==1)
                 .findFirst().get().getKey();
-        System.out.println("Unique element is "+unique);
+        System.out.println("Unique element are "+unique);
 //    }
   int[] numbers={3,5,9,11,6,10,21,2};
   Integer second=Arrays.stream(numbers).boxed()
