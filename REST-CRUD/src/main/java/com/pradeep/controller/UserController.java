@@ -24,6 +24,7 @@ public class UserController {
 
     @GetMapping("/alluser")
     public Optional<List<User>> getAllUser() {
+        System.out.println("Fetching the all user data from database");
         //System.out.println("all user list  "+getAllUser().toString());
         return userService.allUser();
 
